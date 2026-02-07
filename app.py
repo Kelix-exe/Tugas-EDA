@@ -60,6 +60,7 @@ if menu == "Dashboard":
     st.subheader("Most Influential Column")
     imp = pd.DataFrame({'feature': model.feature_names_in_, 'importance': model.feature_importances_}).sort_values('importance', ascending=False)
     st.plotly_chart(px.bar(imp.head(10), x='importance', y='feature', orientation='h'), use_container_width=True)
+    st.write("Humidity at 3 PM is the most important thing about its atmosphere ehich condition in the air is hot from water vaporation")
     st.markdown("---")
 
     st.subheader("Analysis by City")
